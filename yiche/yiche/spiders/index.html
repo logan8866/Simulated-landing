@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="shortcut icon" type="image/x-icon" href="http://www.bitauto.com/favicon.ico" /><link rel="icon" type="image/x-icon" href="http://www.bitauto.com/favicon.ico" />    <script type="text/javascript" src="//jsinc.baa.bitautotech.com/jquery-1.8.1.min.js"></script>
+    
+    
+    
+<link rel="stylesheet" type="text/css" href="//image.bitautoimg.com/uimg/css/00060/2016_gerenzhongxin_pc_bieren-20191012160529-1160.css" media="all" /> 
+                  
+<script type="text/javascript" src="http://js.inc.baa.bitautotech.com/c/c.js?s=domain"></script>
+
+
+<title>
+	【车手2123032FL的主页】_易车
+</title></head>
+<body>
+    
+    <div class="my_top990">
+    <div id="LoginContainer" class="my990">
+        <div class="my_logo">
+            <a href="http://www.yiche.com/" class="yiche">易车网</a>
+        </div>
+        <div class="my_text_tishi">
+            <p id="bigeTalkContainer"></p>
+        </div>
+    </div>
+</div>
+<script id="loginTemplate" type="text/lazyT-template">
+    <ul>
+        <li><span><a href="/authenservice/login.html">登录</a></span><em>|</em></li>
+        <li><span><a href="/authenservice/registersimple/register.html">注册</a></span></li>
+    </ul>
+</script>
+<script id="historyAndMsgTemplate" type="text/lazyT-template">
+    <ul>
+        <li onmouseout="document.getElementById('zhuti_time').style.display='none';this.className='';" onmouseover="document.getElementById('zhuti_time').style.display='';this.className='zhuti_lihover';">
+            <strong class="time"><a href="javascript:;">历史</a></strong>
+            <div class="my_top_layer" id="zhuti_time" style="display:none;">
+                <div class="zhuti_list1">
+                    <h4>车型</h4>
+                    <ul>
+                        {#~ D.viewedcars:car:index#}
+                        <li onclick="Bitauto.top.itemclick($(this));"><a onclick="window.event? window.event.cancelBubble = true :arguments[1]?arguments[1].stopPropagation():arguments[0].stopPropagation();" rel="nofollow" href="http://car.bitauto.com/{#=car.CarSerialAllSpell#}" target="_blank">{#=car.CarSerialTitle#}</a></li>
+                        {#~#}
+                    </ul>
+                    <h4>论坛</h4>
+                    <ul class="noborder">
+                        {#? D.viewedforums#}
+                        {#~ D.viewedforums:forum:index#}
+                        <li onclick="Bitauto.top.itemclick($(this));"><a onclick="window.event? window.event.cancelBubble = true :arguments[1]?arguments[1].stopPropagation():arguments[0].stopPropagation();" rel="nofollow" href="http://baa.bitauto.com/{#=forum.ForumApp#}/" target="_blank">{#=forum.ForumName#}</a></li>
+                        {#~#}
+                        {#?#}
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li id="msgContainer" onmouseout="document.getElementById('zhuti_infor').style.display='none';this.className='';" onmouseover="document.getElementById('zhuti_infor').style.display='';this.className='zhuti_lihover';">
+            <strong class="infor"><a href="javascript:;">信息</a></strong>
+            <div class="my_top_layer" id="zhuti_infor" style="display:none;">
+            </div>
+        </li>
+        <li onmouseout="document.getElementById('zhuti_list').style.display='none';this.className='';" onmouseover="document.getElementById('zhuti_list').style.display='';this.className='zhuti_lihover';">
+            <strong class="list"><a href="javascript:;">列表</a></strong>
+            <div class="my_top_layer" id="zhuti_list" style="display:none;">
+                <div class="zhuti_list2">
+                    <ul>
+                        <li onclick="Bitauto.top.itemclick($(this));"><a onclick="window.event? window.event.cancelBubble = true :arguments[1]?arguments[1].stopPropagation():arguments[0].stopPropagation();" href="http://www.bitauto.com/" target="_blank">易车首页</a></li>
+                        <li onclick="Bitauto.top.itemclick($(this));" class="noborder"><a onclick="window.event? window.event.cancelBubble = true :arguments[1]?arguments[1].stopPropagation():arguments[0].stopPropagation();" href="http://www.taoche.com/" target="_blank">易车二手车</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</script>
+<script id="avatarInfoTemplate" type="text/lazyT-template">
+    <ul>
+        <li onmouseout="document.getElementById('zhuti_style').style.display='none';this.className='';" onmouseover="document.getElementById('zhuti_style').style.display='';this.className='zhuti_lihover';" class="">
+            <p>
+                <a href="http://i.yiche.com/u{#=D.userId#}/">
+                    <img alt="{#=D.showName#}" src="{#=D.avatar120#}" />{#=D.showName#}<em></em>
+                </a>
+            </p>
+            <div class="my_top_layer" id="zhuti_style" style="display: none;">
+                <div class="zhuti_list3 layer_id">
+                    <a title="{#=D.showName#}" href="http://i.yiche.com/u{#=D.userId#}/SettingCenter/AvatarSetting.html">
+                        <img width="120" height="120" alt="{#=D.showName#}" src="{#=D.avatar120#}" />
+                    </a>
+                    <strong title="{#=D.showName#}">{#?D.showName.length>6#}{#=D.showName.substr(0,6)+"..."#}{#??#}{#=D.showName#}{#?#}{#? D.identification.toLowerCase()==='false'#}<a href="/Identification/Identification.html">我要认证</a>{#?#}</strong>
+                    <dl class="grade">
+                        <dt>等级：</dt>
+                        <dd> {#=D.leveltitle#}</dd>
+                    </dl>
+                    <dl>
+                        <div class="chengzhang">
+                            <div class="tiao">
+                                <strong id="creditRate" style="width: 56%;"></strong>
+                            </div>
+                            <span id="creditNum">
+
+                            </span>
+                        </div>
+                    </dl>
+                    {#? D.userbadges.Badges#}
+                    <dl>
+                        <dt>勋章：</dt>
+                        <div class="xunzhangbox">
+                            {#? D.userbadges.Badges.Badge instanceof Array#}
+                            {#~ D.userbadges.Badges.Badge:badgeItem:index#}
+                            {#? index < 7 #}
+                            <div class="xunzhang_li">
+                                <a title="{#=badgeItem.BadgeName#}" class="icon {#=badgeItem.BadgeSmallPic#}" href="{#?badgeItem.BadgeLink.length>0#}{#=badgeItem.BadgeLink#}{#??#}javascript:;{#?#}">{#=badgeItem.BadgeName#}</a>
+                            </div>
+                            {#?#}
+                            {#~#}
+                            {#? D.userbadges.Badges.Badge.length>7#}
+                            <div class="more_li"><a class="more" href="/u{#= D.userId#}/!badges/BadgesOfAll.html"></a></div>
+                            {#?#}
+                            {#??#}
+                            {## var badgeItem=D.userbadges.Badges.Badge; #}
+                            <div class="xunzhang_li">
+                                <a title="{#=badgeItem.BadgeName#}" class="icon {#=badgeItem.BadgeSmallPic#}" href="{#?badgeItem.BadgeLink.length>0#}{#=badgeItem.BadgeLink#}{#??#}javascript:;{#?#}">{#=badgeItem.BadgeName#}</a>
+                            </div>
+                            {#?#}
+                        </div>
+                    </dl>
+                    {#?#}
+                    <div class="layer_link_box">
+                        <a href="http://i.yiche.com/u{#=D.userId#}/settingcenter/" class="style">账号设置</a>
+                        <a href="http://i.yiche.com/SingleSignOn/Logout.aspx?returnurl={#=encodeURIComponent(location.href) #}" class="out">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</script>
+<script id="topMsgTemplate" type="text/lazyT-template">
+    {## var getMsgCategryName,getMsgCategryId,allNewCount,msgDataLength; #}
+    {#? D.state == 2#}
+    {## getMsgCategryName=function(key){var keyHash={'NewInboxSiteMessageCount': '好友',	'NewNormalSystemMessageCount_SourceId_0': '系统',	'NewNormalSystemMessageCount_SourceId_4': '论坛',	'NewNormalSystemMessageCount_SourceId_5': '问答','NewNormalSystemMessageCount_SourceId_7':'口碑','NewNormalSystemMessageCount_SourceId_9': '易车惠',	'NewNormalSystemMessageCount_SourceId_17': '二手车',	'NewNormalSystemMessageCount_SourceId_20': '新闻',	'NewNormalSystemMessageCount_SourceId_21':'视频',	'NewNormalSystemMessageCount_SourceId_22':'视频社区',	'NewNormalSystemMessageCount_SourceId_23':'车友会'};return (key in keyHash)?keyHash[key]:'系统';}; #}
+    {## getMsgCategryId=function(key){var match = key.match(/(\d+)$/ig)||'';return match.length>0?'system'+match:'inbox'}; #}
+    {## allNewCount = 0;msgDataLength=D.msgdata.length;for(var i=0;i< msgDataLength;i++){allNewCount+=D.msgdata[i].Value;} #}
+    {#?#}
+    <strong id="infoIcon" class="{#= !!allNewCount>0? " nesinfor":"infor"#}">
+        <a href="javascript:;">信息</a>
+        {#? !!allNewCount #}
+        <em></em>
+        {#?#}
+    </strong>
+    <div class="my_top_layer" id="zhuti_infor" style="display: none;">
+        <div class="zhuti_list2">
+            <ul>
+                {#? D.msgdata #}
+                {#~ D.msgdata:msg:index#}
+                <li onclick="Bitauto.top.itemclick($(this));"><a onclick="window.event? window.event.cancelBubble = true :arguments[1]?arguments[1].stopPropagation():arguments[0].stopPropagation();" href="http://i.yiche.com/u{#=D.userId#}/MessageCenter/{#=getMsgCategryId(msg.Name)#}.html">{#=getMsgCategryName(msg.Name)#}<em>{#=msg.Value#}</em></a></li>
+                {#~#}
+                {#?#}
+                <li onclick="Bitauto.top.itemclick($(this));" class="noborder"><a onclick="window.event? window.event.cancelBubble = true :arguments[1]?arguments[1].stopPropagation():arguments[0].stopPropagation();" href="http://i.yiche.com/u{#=D.userId#}/MessageCenter/index.html">进入消息中心&gt;&gt;</a></li>
+            </ul>
+        </div>
+    </div>
+</script>
+<script src="http://js.inc.baa.bitautotech.com/c/c.js?s=Bitauto.Login.Version5" type="text/javascript"></script>
+<script type="text/javascript">
+    Bitauto.Login.init();
+   Bitauto.top={};
+    Bitauto.top.itemclick = function(target)
+    {
+        var a =target.find("a");
+        var url=a.attr("href");
+        if(a.attr("target")=="_blank"){
+            window.open(url);
+        }
+        else{
+            location.href= url;
+        }
+
+    }
+
+
+
+
+</script>
+    <span id="yicheAnchor" name="yicheAnchor" style="display:block; height:0; width:0; line-height:0; font-size:0"></span>
+    
+    <div class="mybox_page">
+        
+
+<div class="mymenu_box">
+    <div id="LeftNavContainer" class="box_1">
+        <ul>
+            <li id="module_index">
+                <span><a href='/u82347697/'>TA的主页</a></span>
+            </li>
+        </ul>
+        
+                
+                        <ul>
+                    
+                        <li id="module_forum">
+                            <span>
+                                <a href='http://i.yiche.com/u82347697/!forum/topics/' data-channelid="90.184.1854" >
+                                    TA的论坛
+                                </a>
+                            </span>
+                             
+                        </li>
+                    
+                        <li id="module_ask">
+                            <span>
+                                <a href='http://i.yiche.com/u82347697/!ask/t0/' data-channelid="90.184.1853" >
+                                    TA的问答
+                                </a>
+                            </span>
+                             
+                        </li>
+                    
+                        <li id="module_video">
+                            <span>
+                                <a href='http://i.yiche.com/u82347697/!video/index.html' data-channelid="90.184.1850" >
+                                    TA的视频
+                                </a>
+                            </span>
+                             
+                        </li>
+                    </ul>
+            
+                
+                        <ul>
+                    
+                        <li id="module_badges">
+                            <span>
+                                <a href='http://i.yiche.com/u82347697/!badges/default.html' data-channelid="90.184.1845" >
+                                    TA的勋章
+                                </a>
+                            </span>
+                             
+                        </li>
+                    </ul>
+            
+                
+                        <ul>
+                    
+                        <li id="module_work">
+                            <span>
+                                <a href='http://i.yiche.com/u82347697/!media/works/' data-channelid="" >
+                                    TA的作品
+                                </a>
+                            </span>
+                             
+                        </li>
+                    </ul>
+            
+    </div>
+</div>
+
+        <div class="homepage_box">
+            <div class="his_infor_box">
+                <div class="fistinfor">
+                    <h4 id="avatar_title">
+                        <a href="http://i.yiche.com/u82347697/SettingCenter/AvatarSetting.html" title="车手2123032FL">
+                            <img height="120" width="120" src="http://pic.baa.bitautotech.com/newavatar/120.jpg" alt="车手2123032FL">
+                        </a>
+                        <strong>车手2123…</strong>	</h4>
+                    <div class="long_name" style="display: none;">
+                        <big>车手2123032FL</big>
+                    </div>
+                    
+
+                    <div class="gongsibox">
+                        
+                        <div class="style_button">
+                            <script type="text/javascript">
+                                var iBitauto = iBitauto || {};
+                                iBitauto.AttentionOptions = {
+                                    isFans: false
+                                };
+                            </script>
+                            
+                            <div class="button_gray button_20_10">
+                                <a id="a_attention" role="addAttention" href="javascript:;"><em class="jia">关注</em></a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="ta_guanzhu">
+                        <dl class="one">
+                            <dt>0</dt>
+                            <dd>关注</dd>
+                        </dl>
+                        <dl class="two">
+                            <dt>0</dt>
+                            <dd>粉丝</dd>
+                        </dl>
+
+                        
+                    </div>
+                </div>
+                <div class="fistinfor_right">
+                    <ul class="list">
+                        <li><b>等级：</b><div class="chengzhang">
+                            
+                            <span>幼儿园</span><div class="tiao"><strong style="width: 0%;"></strong></div>
+                            <small><i>0</i>/40</small>
+                        </div>
+                        </li>
+                        <li><b>勋章：</b>
+                            
+<p>
+    暂无勋章&nbsp;&nbsp;
+    <a href="http://i.yiche.com/u82347697/!badges/BadgesOfAll.html" title="如何获得" target="_blank">如何获得&gt;&gt;</a>
+</p>
+
+<script type="text/javascript">
+    
+</script>
+
+                        </li>
+                        
+                    </ul>
+                    <p class="text"></p>
+                </div>
+            </div>
+            
+    <div class="my_title">
+        <h3>TA的易车号最新发布</h3>
+    </div>
+    <div class="clear"></div>
+    <iframe id="iframeApp" name="iframeApp" src="http://h5.ycapp.yiche.com/pc/media/workslist/82347697.html" width="100%" height="800" scrolling="no" frameborder="0"></iframe>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    
+<link rel="stylesheet" type="text/css" href="//image.bitautoimg.com/uimg/css/00059/yiche_2014_backtop-20180912175448-686.css" media="all" /> 
+                  
+<script type="text/javascript" src="http://image.bitautoimg.com/index/js/gotoIM.js?v=1"></script>
+<div class="yiche-side" id="yiche-side">
+    <ul>
+<!-- yiche app start -->
+  <li class="w4 liuliang" data-channelid="1.159.2116">
+<a href="http://app.yiche.com/yiche/"><img src="//image.bitautoimg.com/appimage/cheyou/h/20191126/w45_h43_5600476199f244f28864d7ad51f16531.png" alt="" />
+<i><img src="//image.bitautoimg.com/appimage/cheyou/h/20181225/w260_h260_2d504ee310264f08b5915261369b8c5d.png" alt="" /> </i>
+</a>
+</li>
+    <!-- yiche app end -->
+<li id="feedbackDiv" class="w4 last"><a href="javascript:Bitauto_IM.ImForm_submit()">在线咨询</a></li>
+<li class="side-top w4"><a href="#yicheAnchor" title="返回顶部" id="backtop" style="display:none">返回顶部</a></li>
+    </ul>
+</div>
+<script type="text/javascript" src="http://image.bitautoimg.com/uimg/index2014/js/yicheside.js" ></script>
+<div class="foot_box">
+  		<div class="copright_p">
+        	<div class="w990">
+                <p>CopyRight &copy; 2000-2018 BitAuto,All Rights Reserved.  版权所有  北京易车信息科技有限公司</p>
+                <p>购车咨询：4000-168-168  (9:00–17:30) 法定假日除外</p>
+				<p class="r"><span class="bei"><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202014051500006" target="_blank">经营性网站备案信息</a></span><span class="jing"><a href="http://fzp.bjhd.gov.cn/" target="_blank">北京海淀警方提醒</a></span></p>
+            </div>
+        </div>
+  		<div class="link_a">
+        	<div class="w990">
+            	<ul class="about">
+                    <li class="first"><a rel="nofollow" href="http://corp.bitauto.com/" target="_blank">关于易车</a></li>
+                    <li><a rel="nofollow" href="http://corp.bitauto.com/business/" target="_blank">业务体系</a></li>
+                    <li><a rel="nofollow" href="http://corp.bitauto.com/news/" target="_blank">易车动态</a></li>
+                    <li><a rel="nofollow" href="http://corp.bitauto.com/job/" target="_blank">加入易车</a></li>
+                    <li><a rel="nofollow" href="http://corp.bitauto.com/contact/" target="_blank">联系我们</a></li>
+                    <li><a rel="nofollow" href="http://corp.bitauto.com/about/legal-notices.shtml" target="_blank">法律声明</a></li>
+                    <li><a rel="nofollow" href="http://i.bitauto.com/authenservice/register/Licence.aspx" target="_blank">服务协议</a></li>
+                    <li><a rel="nofollow" href="http://ir.bitauto.com/" target="_blank">Investor Relations</a></li>
+                                      <li><a rel="nofollow" href="http://uec.yiche.com/" target="_blank">用户体验中心</a></li>
+ <li><a rel="nofollow" href="http://dealer.easypass.cn/" target="_blank">易湃会员</a></li>
+  <li class="last"><a rel="nofollow" href="http://www.bitauto.com/feedback/" target="_blank">我要提意见</a></li>
+
+                </ul>
+            </div>
+        </div>
+  </div>
+    
+    
+    
+
+<script type="text/javascript">
+    (function (global) {
+        global["SetMenu"] = function (id, index) {//SetMenu("gift",2);//
+            $("#module_" + id).addClass("current");
+            if (typeof (index) === 'number') {
+                $("#childModuleContainer").children().eq(index).addClass("current");
+            } else if (typeof (index) === 'string') {
+                $(index).addClass('current');
+            }
+        };    
+    })(this);
+</script>
+    <script type="text/javascript">
+        Bitauto.Login.isNeedRefresh = true;
+    </script>
+    <script type="text/javascript" src="http://js.inc.baa.bitautotech.com/c/c.js?s=ibt_friendattention,layerToggle"></script>
+    <script type="text/javascript">
+        $(function () {
+            layerToggle.toggle({ element: { target: $(".long_name"), source: $("#avatar_title strong") } });
+            var pagerUid = '82347697',
+                btn = $("#a_attention"),
+                friendManager = new Bitauto.Friend.Attention(),
+                act;
+            btn.on('click', function (event) {
+                event.preventDefault();
+                Bitauto.Login.afterLoginDo(function () {
+                    act = btn.attr('role');
+                    if (act === 'addAttention') {
+                        friendManager.addAttention(pagerUid, function (data) {
+                            if (data.isSuccess) {
+                                if (iBitauto.AttentionOptions.isFans) {
+                                    btn.html('<em class="xiang">相互关注</em><small>|</small>取消</a>');
+                                } else {
+                                    btn.html('<em class="yi">已关注</em><small>|</small>取消</a>');
+                                }
+                                btn.attr('role', 'removeAttention');
+                            } else {
+                                alert('关注失败');
+                            }
+                        });
+                    } else if (act === 'removeAttention') {
+                        friendManager.removeAttention(pagerUid, function (data) {
+                            if (data.isSuccess) {
+                                btn.html('<em class="jia">关注</em>');
+                                btn.attr('role', 'addAttention');
+                            } else {
+                                alert('取消关注失败');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    
+    <script type="text/javascript">
+        $(function () {
+            window.SetMenu('index', 'li[id="{0}"]');
+        });
+    </script>
+
+
+    <script type="text/javascript" src="//bglog.bitauto.com/bglogpostlog.js?v=20180613"></script><script type="text/javascript" src="//bglog.bitauto.com/getbglog.js?v=20180620"></script>
+    <script type="text/javascript" src="http://image.bitautoimg.com/bt/webtrends/dcs_tag_baa9.js"></script>
+    <!--艾瑞统计-->
+    <SCRIPT TYPE="text/javascript">
+(function (G,D,s,c,p) {
+c={
+UA:"UA-bitauto-000001", 
+NO_FLS:0,
+WITH_REF:1,
+API_URL:"//bitauto.irs01.com/irt?",
+URL:'//img1.bitautoimg.com/stat/iwt-min20151127.js'
+};
+G._iwt?G._iwt.track(c,p):(G._iwtTQ=G._iwtTQ || []).push([c,p]),!G._iwtLoading && lo();
+function lo(t) {
+G._iwtLoading=1;s=D.createElement("script");s.src=c.URL;
+t=D.getElementsByTagName("script");t=t[t.length-1];
+t.parentNode.insertBefore(s,t);
+}
+})(this,document);
+</SCRIPT>
+	<!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?359200dce942cdb6aab0066d11ec3b64";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>
