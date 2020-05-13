@@ -7,14 +7,14 @@ import random
 def slid_track(distance):
     current = 0
     v = 0
-    t = 0.2
+    t = 0.3
     mid = distance*2/3
     track = []
     while current<distance:
         if current<mid:
-            a = 2
+            a = random.uniform(-1,2)
         else:
-            a=-1
+            a=random.uniform(-1,-0.5)
         v0 = v
         v = v0+a*t
         s = v0*t+a*t*t/2
@@ -25,9 +25,10 @@ def slid_track(distance):
 
 def execute_slid(track,driver,slid_button):
     ActionChains(driver).click_and_hold(slid_button).perform()
+    time.sleep(random.uniform(0.2,0.5))
     for i in track:
-        ActionChains(driver).move_by_offset(xoffset=i,yoffset=random.uniform(1,3)).perform()
-    time.sleep(0.5)
+        ActionChains(driver).move_by_offset(xoffset=i,yoffset=random.uniform(0,2)).perform()
+    time.sleep(random.uniform(0.3,0.8))
     ActionChains(driver).release().perform()
 
 
@@ -35,7 +36,7 @@ def caculate_distance(less_img,voll_img):
     for i in range(less_img.size[0]):
         for j in range(voll_img.size[1]):
             if not img_equal(less_img,voll_img,i,j):
-                distance = i-6
+                distance = i-4
                 return distance
 
 
